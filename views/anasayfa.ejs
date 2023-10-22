@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="display: block;
+    align-items: center ;
+    color: #000000;
+     background-color: rgb(0, 177, 104);
+     padding: 20px;">
+        FinCHAT</h1>
+
+    <div>
+
+        <hr>
+        <% for (let art of Allart) { %>
+            <h2 style="font-family: Verdana, Geneva, Tahoma, sans-serif;
+                 color: #00f492;
+                 ">
+                <%= art.Title %>
+            </h2>
+            <p style="background-color: aquamarine; 
+                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                  padding: 20px;">
+                <%= art.body %>
+            </p>
+            <% } %>
+    </div>
+</body>
+
+</html>
