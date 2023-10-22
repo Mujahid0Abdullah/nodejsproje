@@ -103,7 +103,7 @@ app.get("/articles/:art_id", async (req, res) => {
 })
 
 app.get("/anasayfa", async (req, res) => {
-    const art = await article.find();
+    const art = await article.find().maxTimeMS(10000).exec();;
     res.render("anasayfa.ejs", {
         Allart: art,
     })
