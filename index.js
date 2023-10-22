@@ -21,6 +21,10 @@ app.use(express.json());
 app.get("/hello", (req, res) => {
     res.send("hello");
 });
+
+app.get("/", (req, res) => {
+    res.send("Finans proje");
+})
 app.get("/numbers", (req, res) => {
     let numbers = "";
     for (let i = 0; i <= 100; i++) {
