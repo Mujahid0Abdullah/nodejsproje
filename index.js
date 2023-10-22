@@ -1,3 +1,4 @@
+//terminal: nodemon index.js
 console.log("im here listening");
 
 const express = require("express");
@@ -106,6 +107,13 @@ app.get("/anasayfa", async (req, res) => {
     const art = await article.find().maxTimeMS(10000).exec();;
     res.render("anasayfa.ejs", {
         Allart: art,
+
+        //(node:51) UnhandledPromiseRejectionWarning: MongooseError: Operation `articles.find()` buffering timed out after 10000ms
+        // Oct 22 01:32:24 PM      at Timeout.<anonymous> (/opt/render/project/src/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:186:23)
+        // Oct 22 01:32:24 PM      at listOnTimeout (internal/timers.js:555:17)
+        // Oct 22 01:32:24 PM      at processTimers (internal/timers.js:498:7)
+        // Oct 22 01:32:24 PM  (node:51) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 4)
+
     })
 })
 
